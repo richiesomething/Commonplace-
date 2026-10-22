@@ -28,7 +28,7 @@ Opening `index.html` directly also works, but a local server is closest to real 
 
 - **Products & categories:** `js/products.js` (names, prices, descriptions, options, illustrations)
 - **Colors & fonts:** CSS variables at the top of `css/styles.css`
-- **Mascot art:** `assets/pup-*.svg` (cartoon versions of the shop dog photo in `assets/img/`)
+- **Logo & mascot:** `assets/img/logo.webp` (full logo), `logo-mark.webp` (circle used in the header/footer), `pup-walking.webp` and `pup-head.webp` (illustrated shop dog), `assets/favicon.png`
 - **Hours:** the `HOURS` array in `js/main.js`, plus the hours shown in `visit.html` and the footer
 
 The basket is saved in the browser (localStorage). Forms, checkout and workshop reservations are demo-only.

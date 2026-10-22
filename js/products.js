@@ -6,18 +6,13 @@
   const O = `stroke="${INK}" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"`;
   const shadow = (cx = 100, cy = 172, rx = 62) => `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="8" fill="${INK}" opacity=".12"/>`;
 
-  // tiny sleeping pup glyph used on stickers, wax seals & totes
-  const pupFace = (x, y, s = 1, eyes = "closed") => `
-    <g transform="translate(${x} ${y}) scale(${s})">
-      <path d="M-22 -6 L-20 -34 L-4 -18 Z" fill="#b8672e" ${O}/>
-      <path d="M22 -6 L20 -34 L4 -18 Z" fill="#a85b27" ${O}/>
-      <ellipse cx="0" cy="0" rx="26" ry="22" fill="#b8672e" ${O}/>
-      <path d="M-15 6 C-13 -6 -4 -6 0 1 C4 -6 13 -6 15 6 C16 18 8 22 0 22 C-8 22 -16 18 -15 6 Z" fill="#f6e4cb"/>
-      ${eyes === "closed"
-        ? `<path d="M-14 1 q5 4 9 0 M5 1 q5 4 9 0" stroke="${INK}" stroke-width="2.6" fill="none" stroke-linecap="round"/>`
-        : `<circle cx="-9" cy="1" r="3" fill="${INK}"/><circle cx="9" cy="1" r="3" fill="${INK}"/>`}
-      <ellipse cx="0" cy="10" rx="5.5" ry="4" fill="#6e3b2b"/>
-    </g>`;
+  // the illustrated shop-dog head, clipped to a circle, for stickers, wax seals & totes
+  const pupFace = (x, y, s = 1) => {
+    const r = 26 * s;
+    return `
+    <circle cx="${x}" cy="${y}" r="${r}" fill="#f6e4cb" ${O}/>
+    <image href="assets/img/pup-head.webp" x="${x - r}" y="${y - r}" width="${2 * r}" height="${2 * r}" clip-path="url(#round)"/>`;
+  };
 
   const ART = {
     notebook: ({ c = "#b8672e", a = "#7f8f6f", dots = false }) => `
@@ -133,7 +128,7 @@
       </g>
       <path d="M58 122 C42 102 56 76 80 74 C96 62 122 68 130 86 C150 94 152 126 136 140 C130 160 100 168 84 156 C62 158 46 140 58 122 Z" fill="${c}" ${O}/>
       <circle cx="96" cy="116" r="30" fill="none" stroke="#000" stroke-width="3" opacity=".2"/>
-      <g opacity=".5">${pupFace(96, 120, .8)}</g>`,
+      <g opacity=".55" style="mix-blend-mode:multiply">${pupFace(96, 116, .95)}</g>`,
 
     planner: ({ c = "#7f8f6f", tabs = ["#b8672e", "#e3b04b", "#f2cfbf"] }) => `
       ${shadow()}
@@ -191,7 +186,7 @@
     stickers: () => `
       ${shadow(100, 172, 64)}
       <rect x="44" y="30" width="112" height="140" rx="8" fill="#fffaf1" ${O}/>
-      ${pupFace(74, 70, .6)}${pupFace(124, 72, .6, "open")}
+      ${pupFace(74, 70, .75)}${pupFace(124, 72, .75)}
       <circle cx="74" cy="122" r="14" fill="#e3b04b" ${O}/>
       <path d="M118 108 l6 12 l13 2 l-10 9 l3 13 l-12 -7 l-12 7 l3 -13 l-10 -9 l13 -2 Z" fill="#7f8f6f" ${O}/>
       <rect x="58" y="146" width="40" height="12" rx="6" fill="#f2cfbf" ${O}/>
@@ -229,7 +224,7 @@
       ${shadow(100, 178, 60)}
       <path d="M74 66 C74 22 126 22 126 66" fill="none" ${O} stroke-width="6"/>
       <path d="M50 62 h100 l8 112 h-116 Z" fill="${c}" ${O}/>
-      ${pupFace(100, 112, 1)}
+      ${pupFace(100, 110, 1.15)}
       <text x="100" y="158" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-style="italic" fill="${INK}">nap club</text>`,
 
     giftcard: ({ c = "#b8672e" }) => `
@@ -254,7 +249,7 @@
 
   function art(kind, opts = {}, bg = "#f6dfca") {
     const body = (ART[kind] || ART.notebook)(opts);
-    return `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice"><rect width="200" height="200" fill="${bg}"/><circle cx="160" cy="36" r="46" fill="#fff" opacity=".22"/><circle cx="30" cy="190" r="40" fill="#fff" opacity=".18"/>${body}</svg>`;
+    return `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice"><defs><clipPath id="round" clipPathUnits="objectBoundingBox"><circle cx=".5" cy=".5" r=".5"/></clipPath></defs><rect width="200" height="200" fill="${bg}"/><circle cx="160" cy="36" r="46" fill="#fff" opacity=".22"/><circle cx="30" cy="190" r="40" fill="#fff" opacity=".18"/>${body}</svg>`;
   }
 
   const CATEGORIES = [

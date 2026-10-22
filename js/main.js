@@ -11,7 +11,7 @@
   const FREE_SHIP = 40;
 
   const BADGES = {
-    pup: '<span class="badge badge--pup"><img src="assets/pup-head.svg" alt="">Pup’s pick</span>',
+    pup: '<span class="badge badge--pup"><img src="assets/img/pup-head.webp" alt="">Pup’s pick</span>',
     new: '<span class="badge badge--new">New</span>',
     staff: '<span class="badge">Staff pick</span>',
     low: '<span class="badge badge--low">Almost gone</span>'
@@ -72,7 +72,7 @@
       t.setAttribute("aria-live", "polite");
       document.body.appendChild(t);
     }
-    t.innerHTML = `<img src="assets/pup-head.svg" alt=""><span>${html}</span>`;
+    t.innerHTML = `<img src="assets/img/pup-head.webp" alt=""><span>${html}</span>`;
     requestAnimationFrame(() => t.classList.add("show"));
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => t.classList.remove("show"), 3200);
@@ -206,7 +206,7 @@
       $("#shop-count").textContent = `${list.length} ${list.length === 1 ? "item" : "items"}`;
       grid.innerHTML = list.length ? list.map(card).join("") : `
         <div class="empty-state" style="grid-column:1/-1">
-          <img src="assets/pup-peek.svg" alt="">
+          <img src="assets/img/pup-walking.webp" alt="">
           <p>Hmm, the pup sniffed everywhere and couldn’t find that.<br>Try a different word or category.</p>
         </div>`;
       initReveal();
@@ -314,7 +314,7 @@
       if (!items.length) {
         root.innerHTML = `
           <div class="empty-state">
-            <img src="assets/pup-peek.svg" alt="Cartoon pup peeking over a ledge">
+            <img src="assets/img/pup-walking.webp" alt="Our illustrated shop dog trotting along">
             <h2>Your basket is empty</h2>
             <p>Even the pup checked twice. Let’s find you something lovely.</p>
             <a class="btn" href="shop.html">Browse the shop</a>
