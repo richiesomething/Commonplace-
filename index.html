@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Commonplace · A cozy stationery shop</title>
+<meta name="description" content="Commonplace is a cozy neighborhood stationery shop: notebooks, fountain pens, letter-writing sets, planners and small joys.">
+<meta name="theme-color" content="#f7f0e4">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..700,0..100,0..1;1,9..144,400..700,0..100,0..1&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="announce">Free shipping over <strong>$40</strong> · Gift wrapping is always free · Pens uncapped for testing at the shop</div>
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html" aria-label="Commonplace home">
+      <img src="assets/pup-head.svg" alt="" width="46" height="43">
+      <span class="logo-text"><span class="logo-name">Commonplace</span><span class="logo-tag">paper · pens · small joys</span></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="Main">
+      <ul><li><a href="shop.html">Shop</a></li><li><a href="workshops.html">Workshops</a></li><li><a href="about.html">Our Story</a></li><li><a href="visit.html">Visit</a></li></ul>
+    </nav>
+    <div class="header-actions">
+      <a class="icon-btn" href="cart.html" aria-label="Your basket"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="cart-count" data-count="0">0</span></a>
+      <button class="icon-btn nav-toggle" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="main">
+<section class="hero">
+  <div class="container">
+    <div>
+      <span class="eyebrow">Welcome in, friend</span>
+      <h1>A cozy little shop for <em>paper, pens</em> &amp; the people who love them.</h1>
+      <p class="hero-lede">Commonplace is a neighborhood stationery shop full of lovely notebooks, fountain pens, letter-writing sets and little desk treasures. Pull up a chair; the kettle’s on and the shop dog is (probably) asleep.</p>
+      <div class="hero-ctas">
+        <a class="btn" href="shop.html">Browse the shop</a>
+        <a class="btn btn--ghost" href="workshops.html">Upcoming workshops</a>
+      </div>
+      <div class="hero-note"><span class="dot"></span><span data-open-status>Open today 10–6</span></div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="rug"></div>
+      <div class="stamp">Head of<br>Naps<br>est. 2024</div>
+      <div class="sticky">shhh…<br>shop dog<br>on duty</div>
+      <div class="pup"><img src="assets/pup-sleeping.svg" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>fountain pens</span><span>linen journals</span><span>wax seals</span><span>washi tape</span><span>letter sets</span><span>watercolors</span><span>planners</span><span>old paper candles</span>
+    <span>fountain pens</span><span>linen journals</span><span>wax seals</span><span>washi tape</span><span>letter sets</span><span>watercolors</span><span>planners</span><span>old paper candles</span>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Wander the shelves</span>
+        <h2>Shop by category</h2>
+      </div>
+      <a class="link-arrow" href="shop.html">See everything</a>
+    </div>
+    <div class="cat-grid" id="home-categories"></div>
+  </div>
+</section>
+
+<section class="band edge-top">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Fresh off the shelf</span>
+        <h2>Staff &amp; pup picks</h2>
+        <p>The things we keep reaching for, and a few the shop dog personally approved (by sleeping on the box).</p>
+      </div>
+      <a class="link-arrow" href="shop.html">Shop all</a>
+    </div>
+    <div class="product-grid" id="home-featured"></div>
+  </div>
+</section>
+
+<section class="pup-feature">
+  <div class="container">
+    <figure class="polaroid reveal">
+      <img src="assets/img/shop-dog-crop.jpg" alt="Our real shop dog, a red and cream husky mix, curled up asleep on a floral quilt" width="900" height="720" loading="lazy">
+      <figcaption>the boss, hard at work</figcaption>
+      <img class="sticker" src="assets/pup-head.svg" alt="">
+    </figure>
+    <div class="reveal">
+      <span class="eyebrow">Meet the shop dog</span>
+      <h2>Our Head of Naps</h2>
+      <p class="prose no-drop" style="color:var(--ink-soft)">Every cozy shop needs a resident napper. Ours is a fluffy, rust-colored pup who greets customers with one sleepy eye, supervises the gift-wrapping table and inspired our logo, our wax seal and our very favorite ink color.</p>
+      <ul class="pup-facts">
+        <li><span class="time">10:00</span><span>Opens the shop (from the comfort of the quilt)</span></li>
+        <li><span class="time">12:30</span><span>Quality-checks the new notebook deliveries</span></li>
+        <li><span class="time">2:00</span><span>Very important nap. Do not disturb.</span></li>
+        <li><span class="time">4:00</span><span>Accepts ear scratches from regulars</span></li>
+      </ul>
+      <a class="btn btn--ghost" href="shop.html?q=pup">Shop the pup collection</a>
+    </div>
+  </div>
+</section>
+
+<section class="band band--sage edge-top" style="--edge: var(--sage-light)">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">More than a shop</span>
+      <h2>Come for the paper, stay for the tea</h2>
+    </div>
+    <div class="services">
+      <div class="service reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l6 6-9 9H5v-6z"/><path d="M12 6l6 6"/><circle cx="9" cy="15" r="1.2"/></svg></div><h3>The pen bar</h3><p>Every pen we sell is uncapped and ready to try before you buy.</p></div>
+      <div class="service reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="1"/><path d="M12 8v13M3 12h18M12 8c-2-4-6-4-6-1s6 1 6 1zm0 0c2-4 6-4 6-1s-6 1-6 1z"/></svg></div><h3>Free gift wrap</h3><p>Kraft paper, twine and a sprig of something green. Always free.</p></div>
+      <div class="service reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v5l-1 4h-4L9 8z"/><path d="M5 12h14v4H5zM4 20h16"/></svg></div><h3>Custom stamps</h3><p>Personalized rubber stamps &amp; wax seals, made in about two weeks.</p></div>
+      <div class="service reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h13v5a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6z"/><path d="M17 11h1.5a2.5 2.5 0 0 1 0 5H17M8 3c0 2 2 2 2 4M12 3c0 2 2 2 2 4"/></svg></div><h3>The letter desk</h3><p>A quiet corner with tea, stamps and stationery to write a letter on the spot.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Gather round the table</span>
+        <h2>Upcoming workshops</h2>
+        <p>Small, unhurried classes with all supplies included. Beginners always welcome.</p>
+      </div>
+      <a class="link-arrow" href="workshops.html">All workshops</a>
+    </div>
+    <div class="ws-grid">
+      <article class="ws-card reveal">
+        <div class="ws-date"><span class="m">Nov</span><span class="d">7</span><span class="w">Sat</span></div>
+        <div>
+          <h3>Modern Calligraphy for Beginners</h3>
+          <div class="ws-meta"><span>10:00 – 12:00</span><span>$45</span></div>
+          <p>Learn the basic strokes with a pointed pen and walk away with your own practice kit.</p>
+          <div class="ws-foot"><span class="seats low">3 seats left</span><a class="btn btn--small" href="workshops.html">Details</a></div>
+        </div>
+      </article>
+      <article class="ws-card reveal">
+        <div class="ws-date"><span class="m">Nov</span><span class="d">13</span><span class="w">Fri</span></div>
+        <div>
+          <h3>Letter-Writing Social</h3>
+          <div class="ws-meta"><span>6:30 – 8:00</span><span>Free</span></div>
+          <p>Tea, cookies and stationery on us. Write to someone you miss. We’ll even supply the stamp.</p>
+          <div class="ws-foot"><span class="seats">12 seats left</span><a class="btn btn--small" href="workshops.html">Details</a></div>
+        </div>
+      </article>
+      <article class="ws-card reveal">
+        <div class="ws-date"><span class="m">Nov</span><span class="d">21</span><span class="w">Sat</span></div>
+        <div>
+          <h3>Bind Your Own Journal</h3>
+          <div class="ws-meta"><span>1:00 – 4:00</span><span>$65</span></div>
+          <p>Fold, punch and stitch a simple coptic-bound notebook to take home.</p>
+          <div class="ws-foot"><span class="seats">6 seats left</span><a class="btn btn--small" href="workshops.html">Details</a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band edge-top">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Kind words</span>
+      <h2>Notes from our regulars</h2>
+    </div>
+    <div class="notes">
+      <figure class="note reveal"><blockquote>“I came in for one notebook and left with three, a candle and a new favorite ink. No regrets.”</blockquote><cite>Maya R., notebook collector</cite></figure>
+      <figure class="note reveal"><blockquote>“The coziest shop in town. The pup was asleep on a quilt and I honestly wanted to join.”</blockquote><cite>Jordan T., first-time visitor</cite></figure>
+      <figure class="note reveal"><blockquote>“Their gift wrapping is a work of art. My mom kept the twine.”</blockquote><cite>Sam L., gift-giver extraordinaire</cite></figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="letter reveal">
+      <img src="assets/pup-peek.svg" alt="">
+      <div>
+        <span class="eyebrow">The Commonplace Letter</span>
+        <h2 style="margin-bottom:.3em">Mail from us, once a month</h2>
+        <p style="color:var(--ink-soft);margin:0">New arrivals, workshop dates, journaling prompts, and the occasional pup update. Never spammy, always cozy.</p>
+        <form data-demo="Thanks for subscribing! (This is a demo form.)">
+          <label class="visually-hidden" for="nl-email">Email address</label>
+          <input class="field" id="nl-email" type="email" placeholder="you@example.com" required>
+          <button class="btn" type="submit">Sign me up</button>
+        </form>
+        <small>Get 10% off your first order when you subscribe.</small>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/pup-sleeping.svg" alt="Our cartoon shop dog, curled up asleep">
+        <div class="logo-name" style="font-family:var(--font-display);font-size:1.6rem;font-weight:700">Commonplace</div>
+        <p>A cozy little stationery shop for notebook hoarders, letter writers, list makers and anyone who still loves the feel of pen on paper.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M10 21l2-9m0 0c0-2 1-3 2.5-3S17 10 16 12.5s-3.5 2.5-4 0"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5M14 3c.5 2.5 2.5 4.5 5 4.5"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="shop.html?cat=notebooks">Notebooks & Journals</a></li>
+          <li><a href="shop.html?cat=pens">Pens, Pencils & Ink</a></li>
+          <li><a href="shop.html?cat=letters">Cards & Letters</a></li>
+          <li><a href="shop.html?cat=planners">Planners</a></li>
+          <li><a href="shop.html?cat=art">Art & Sketch</a></li>
+          <li><a href="shop.html?cat=gifts">Gift Cards</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul>
+          <li><a href="visit.html#faq">Shipping & Returns</a></li>
+          <li><a href="visit.html#faq">FAQ</a></li>
+          <li><a href="workshops.html">Workshops</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="visit.html#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <p style="margin:0 0 10px">214 Willow Lane<br>Hometown, USA</p>
+        <p style="margin:0 0 10px">Mon–Wed 10–6 · Thu–Fri 10–8<br>Sat 9–6 · Sun 11–5</p>
+        <p style="margin:0"><a href="mailto:hello@commonplace.shop">hello@commonplace.shop</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span class="year">2026</span> Commonplace Stationery. All rights reserved.</span>
+      <span class="hand">Thanks for stopping by ♡</span>
+    </div>
+  </div>
+</footer>
+<script src="js/products.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
