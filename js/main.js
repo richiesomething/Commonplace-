@@ -17,7 +17,9 @@
     low: '<span class="badge badge--low">Almost gone</span>'
   };
 
-  const productArt = (p) => art(p.art[0], p.art[1], p.bg);
+  const productArt = (p, eager) => p.img
+    ? `<img class="photo" src="${p.img}" alt="" width="800" height="800"${eager ? "" : ' loading="lazy"'}>`
+    : art(p.art[0], p.art[1], p.bg);
   const priceFor = (p, option) => (option && /^\$\d/.test(option) ? parseFloat(option.slice(1)) : p.price);
 
   /* ---------- Cart (localStorage) ---------- */
@@ -242,10 +244,10 @@
     $("#pdp-crumbs").innerHTML = `<a href="index.html">Home</a> / <a href="shop.html">Shop</a> / <a href="shop.html?cat=${p.cat}">${catName(p.cat)}</a> / ${p.name}`;
     root.innerHTML = `
       <div class="pdp-gallery">
-        <div class="main-img">${productArt(p)}</div>
-        <div class="pdp-thumbs" role="group" aria-label="Choose a backdrop">
+        <div class="main-img">${productArt(p, true)}</div>
+        ${p.img ? `<p class="photo-credit">Photo: ${p.credit || "see <a href=\"credits.html\">photo credits</a>"}</p>` : `<div class="pdp-thumbs" role="group" aria-label="Choose a backdrop">
           ${views.map((bg, i) => `<button type="button" data-bg="${bg}" aria-pressed="${i === 0}" aria-label="View ${i + 1}">${art(p.art[0], p.art[1], bg)}</button>`).join("")}
-        </div>
+        </div>`}
       </div>
       <div class="pdp-info">
         ${p.badge ? `<div style="position:relative;height:34px;margin-bottom:8px">${BADGES[p.badge].replace('class="badge', 'style="position:static" class="badge')}</div>` : ""}
