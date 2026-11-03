@@ -318,6 +318,8 @@ a.button { display: inline-block; text-decoration: none; color: #fff; }
   text-wrap: balance;
 }
 .prose p { margin: 0; max-width: 65ch; }
+.prose .signature { font-family: var(--font-tagline); font-style: italic; font-size: 1.6rem; line-height: 1.2; margin-top: 0.25rem; }
+.prose .signature::before { content: "— "; }
 
 
 /* Marks copy the shop still needs to write */
