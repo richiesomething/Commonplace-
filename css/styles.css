@@ -69,7 +69,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* Blue gingham band: two translucent stripe layers crossing */
 .gingham {
-  height: 28px;
+  height: 56px; /* about the height of the menu bar */
   background-color: #fff;
   background-image:
     linear-gradient(90deg, rgb(110 141 181 / .5) 50%, transparent 50%),
