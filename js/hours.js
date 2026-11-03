@@ -1,6 +1,6 @@
 // Store hours: [open, close] in 24-hour time, indexed Sunday (0) to Saturday (6).
 // Keep in sync with the table in index.html. Use null for a closed day.
-const HOURS = [[10, 18], [9, 18], [9, 18], [9, 18], [9, 18], [9, 18], [9, 18]];
+const HOURS = [[10, 16], [9, 18], [9, 18], [9, 18], [9, 18], [9, 18], [9, 18]];
 
 (function () {
   const now = new Date();
