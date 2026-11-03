@@ -64,8 +64,8 @@ img { max-width: 100%; height: auto; display: block; }
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
 }
-.storefront { width: min(280px, 62%); }
-.wordmark { display: block; margin: 0; width: min(300px, 64%); }
+.storefront { width: min(240px, 56%); }
+.wordmark { display: block; margin: 0; width: min(260px, 60%); }
 
 /* Blue gingham band: two translucent stripe layers crossing */
 .gingham {
