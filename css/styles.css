@@ -48,7 +48,7 @@ img { max-width: 100%; height: auto; display: block; }
   flex-direction: column;
   align-items: center;
   gap: clamp(0.75rem, 2vw, 1.5rem);
-  padding-block: clamp(2rem, 6vw, 4.5rem) clamp(2rem, 5vw, 3.5rem);
+  padding-block: clamp(1rem, 3vw, 2.5rem) clamp(2rem, 5vw, 3.5rem);
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
 }
@@ -220,3 +220,91 @@ img { max-width: 100%; height: auto; display: block; }
 .signup-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0.6rem; margin-top: 1rem; }
 .signup-done { display: flex; flex-direction: column; align-items: flex-start; gap: 0.6rem; }
 .signup-done p { margin: 0 0 0.5rem; }
+
+a { color: var(--ink-navy); text-decoration-color: var(--natural-oak); text-underline-offset: 3px; }
+a:focus-visible { outline: 3px solid var(--french-blue); outline-offset: 3px; border-radius: 2px; }
+a.button { display: inline-block; text-decoration: none; color: #fff; }
+
+/* Site navigation */
+.site-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  padding-block: 1.1rem;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.site-nav a {
+  text-decoration: none;
+  padding-block: 0.25rem;
+  border-bottom: 2px solid transparent;
+}
+.site-nav a:hover { border-bottom-color: var(--natural-oak); }
+.site-nav a[aria-current="page"] { border-bottom-color: var(--french-blue); }
+
+/* Inner pages */
+.page {
+  flex: 1;
+  width: 100%;
+  max-width: calc(640px + 2 * max(16px, env(safe-area-inset-left, 0px)));
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding-block: clamp(1rem, 3vw, 2.5rem) clamp(2.5rem, 6vw, 4rem);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.page-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+.page-wordmark { width: min(260px, 60%); margin-bottom: 1rem; }
+.page-header h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.4rem, 6vw, 3.2rem);
+  line-height: 1.05;
+}
+.page-header .tagline { margin: 0; }
+
+.prose { display: flex; flex-direction: column; gap: 0.75rem; }
+.prose h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.9rem;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+.prose p { margin: 0; max-width: 65ch; }
+
+.about-figure { margin: 0.75rem 0 0; display: flex; justify-content: center; }
+.about-figure img { width: min(380px, 85%); }
+
+/* Marks copy the shop still needs to write */
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1rem 1.25rem;
+  border: 2px dashed var(--natural-oak);
+  border-radius: 6px;
+  font-style: italic;
+  color: rgb(35 50 74 / 0.8);
+}
+.placeholder-label {
+  font-style: normal;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8A6436;
+}

@@ -11,7 +11,9 @@ python3 -m http.server 8000
 
 ## What's here
 
-- `index.html`: the home screen (wordmark and storefront for now)
+- `index.html`: the home page (storefront, wordmark, next workshop, store hours)
+- `about.html`: About Us (the dashed box marks copy the shop still needs to write)
+- `js/hours.js`, `js/workshop.js`: open/closed status and the workshop sign-up form (demo only, nothing is saved yet)
 - `css/styles.css`: colors and fonts live as CSS variables at the top
 - `assets/img/wordmark.webp`, `assets/img/storefront.webp`: brand artwork
 - `brand/palette.png`: the proposed color palette

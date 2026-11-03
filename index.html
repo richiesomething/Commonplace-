@@ -12,6 +12,10 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <nav class="site-nav" aria-label="Main">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="about.html">About Us</a>
+  </nav>
   <main class="home">
     <img class="storefront" src="assets/img/storefront.webp" width="1522" height="901"
          alt="Illustration of the Commonplace shop: a grey clapboard cottage with a red brick chimney, blue awnings over glass doors, and a white porch framed by shrubs.">
@@ -20,7 +24,7 @@
     </h1>
     <p class="tagline">Friendly Neighborhood Stationery Shop</p>
 
-    <section class="workshop" aria-labelledby="workshop-title">
+    <section class="workshop" id="workshop" aria-labelledby="workshop-title">
       <p class="eyebrow" id="workshop-title">Next Workshop</p>
       <p class="workshop-date"><time datetime="2027-01-14">Thursday, January 14</time></p>
       <button class="button" type="button" id="workshop-signup">Sign Up for the Workshop</button>
