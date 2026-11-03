@@ -143,6 +143,7 @@ img { max-width: 100%; height: auto; display: block; }
   background: var(--tomato-red);
 }
 .open-status.is-open { background: var(--french-blue); }
+.open-status.is-soon { background: #4F6E99; }
 
 .hours-table {
   width: 100%;

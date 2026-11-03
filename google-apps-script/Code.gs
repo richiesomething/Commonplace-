@@ -6,13 +6,26 @@
  * Works with a blank sheet: the column headings are added automatically. The website sends each sign-up here, and this
  * script adds it as a new row. It also tells the website how many spots are left.
  *
- * To change how many spots an event has, edit CAPACITY below, then
+ * Every event has DEFAULT_SPOTS spots. To give one event a different number,
+ * add its event ID to CAPACITY. After any change:
  * Deploy > Manage deployments > Edit (pencil) > Version: New version > Deploy.
- * Events not listed here have no limit.
  */
+const DEFAULT_SPOTS = 12;
+
+// Event IDs come from data-event-id on the website's sign-up buttons.
+const EVENTS = [
+  'junk-journal-social-2027-01-14',
+  'junk-journal-social-2027-01-17',
+  'centered-rooted-2027-01-21',
+];
+
 const CAPACITY = {
-  'junk-journal-social-2027-01-14': 12,
+  // 'some-event-id': 20,
 };
+
+function capacity_(id) {
+  return id in CAPACITY ? CAPACITY[id] : DEFAULT_SPOTS;
+}
 
 const SHEET_NAME = ''; // blank = first tab of the spreadsheet
 
@@ -44,8 +57,9 @@ function seatsTaken_() {
 
 function spotsLeft_(taken) {
   const left = {};
-  Object.keys(CAPACITY).forEach(function (id) {
-    left[id] = Math.max(0, CAPACITY[id] - (taken[id] || 0));
+  const ids = EVENTS.concat(Object.keys(CAPACITY), Object.keys(taken));
+  ids.forEach(function (id) {
+    left[id] = Math.max(0, capacity_(id) - (taken[id] || 0));
   });
   return left;
 }
@@ -55,7 +69,7 @@ function json_(obj) {
     .setMimeType(ContentService.MimeType.JSON);
 }
 
-// GET: spots left for every event with a limit, e.g. {"junk-journal-social-2027-01-14": 9}
+// GET: spots left for every event, e.g. {"junk-journal-social-2027-01-14": 9}
 function doGet() {
   return json_({ ok: true, spotsLeft: spotsLeft_(seatsTaken_()) });
 }
@@ -76,11 +90,9 @@ function doPost(e) {
     }
 
     const taken = seatsTaken_();
-    if (eventId in CAPACITY) {
-      const left = CAPACITY[eventId] - (taken[eventId] || 0);
-      if (left <= 0) return json_({ ok: false, error: 'full', spotsLeft: 0 });
-      if (seats > left) return json_({ ok: false, error: 'not_enough', spotsLeft: left });
-    }
+    const before = capacity_(eventId) - (taken[eventId] || 0);
+    if (before <= 0) return json_({ ok: false, error: 'full', spotsLeft: 0 });
+    if (seats > before) return json_({ ok: false, error: 'not_enough', spotsLeft: before });
 
     sheet_().appendRow([
       new Date(),
@@ -92,9 +104,7 @@ function doPost(e) {
       seats,
     ]);
 
-    taken[eventId] = (taken[eventId] || 0) + seats;
-    const left = eventId in CAPACITY ? CAPACITY[eventId] - taken[eventId] : null;
-    return json_({ ok: true, spotsLeft: left });
+    return json_({ ok: true, spotsLeft: before - seats });
   } finally {
     lock.releaseLock();
   }
