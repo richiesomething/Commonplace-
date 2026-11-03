@@ -14,7 +14,7 @@
     document.getElementById("signup-name").focus();
   }
 
-  document.getElementById("workshop-signup").addEventListener("click", open);
+  document.querySelectorAll("[data-signup]").forEach((btn) => btn.addEventListener("click", open));
   document.getElementById("signup-cancel").addEventListener("click", () => dialog.close());
   document.getElementById("signup-close").addEventListener("click", () => dialog.close());
   dialog.addEventListener("click", (e) => { if (e.target === dialog) dialog.close(); });

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="claude:viewport-fit-sides" content="cover">
+  <title>Events · Commonplace Stationery</title>
+  <meta name="description" content="Workshops and events at Commonplace Stationery.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <nav class="site-nav" aria-label="Main">
+    <a href="index.html">Home</a>
+    <a href="events.html" aria-current="page">Events</a>
+    <a href="about.html">About Us</a>
+  </nav>
+  <main class="page">
+    <header class="page-header">
+      <img class="page-wordmark" src="assets/img/wordmark.webp" width="1769" height="401" alt="Commonplace Stationery">
+      <h1>Events</h1>
+      <p class="tagline">Workshops and gatherings at the shop</p>
+    </header>
+
+    <section class="prose" aria-labelledby="upcoming-title">
+      <h2 id="upcoming-title">Upcoming</h2>
+      <ul class="event-list">
+        <li class="event">
+          <time class="event-date" datetime="2027-01-14">
+            <span class="event-month">Jan</span>
+            <span class="event-day">14</span>
+            <span class="event-weekday">Thu</span>
+          </time>
+          <div class="event-body">
+            <p class="eyebrow">Workshop</p>
+            <h3>January Workshop</h3>
+            <p class="event-meta">Thursday, January 14 · Time and details coming soon</p>
+            <div class="event-actions">
+              <button class="button" type="button" data-signup>Sign Up</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <p class="event-note">More events are on the way. Stop by the shop or check back here.</p>
+    </section>
+  </main>
+  <div class="gingham" aria-hidden="true"></div>
+
+  <dialog class="signup" id="signup-dialog" aria-labelledby="signup-title">
+    <form class="signup-form" id="signup-form" novalidate>
+      <h2 id="signup-title">Workshop Sign-Up</h2>
+      <p class="signup-when">Thursday, January 14</p>
+      <label for="signup-name">Name</label>
+      <input id="signup-name" name="name" type="text" autocomplete="name" required>
+      <label for="signup-email">Email</label>
+      <input id="signup-email" name="email" type="email" autocomplete="email" required>
+      <label for="signup-seats">Seats</label>
+      <select id="signup-seats" name="seats">
+        <option>1</option><option>2</option><option>3</option><option>4</option>
+      </select>
+      <p class="signup-error" id="signup-error" role="alert" hidden></p>
+      <div class="signup-actions">
+        <button class="button button--quiet" type="button" id="signup-cancel">Cancel</button>
+        <button class="button" type="submit">Save My Seat</button>
+      </div>
+    </form>
+    <div class="signup-done" id="signup-done" hidden>
+      <h2>You're on the list</h2>
+      <p>We'll see you Thursday, January 14.</p>
+      <button class="button" type="button" id="signup-close">Done</button>
+    </div>
+  </dialog>
+  <script src="js/workshop.js"></script>
+</body>
+</html>
