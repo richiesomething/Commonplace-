@@ -12,7 +12,7 @@ python3 -m http.server 8000
 ## What's here
 
 - `index.html`: the home page (storefront, wordmark, next workshop, store hours)
-- `brands.html`: the brands the shop carries
+- `brands.html`: the brands the shop carries, grouped by category, plus an Adding Soon list
 - `events.html`: upcoming workshops and events, each with a sign-up button
 - `about.html`: About Us (the dashed box marks copy the shop still needs to write)
 - `js/hours.js`: open/closed status from the store hours
