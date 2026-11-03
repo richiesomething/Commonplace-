@@ -1,5 +1,5 @@
 /* Commonplace Stationery
-   Layout: a single quiet column on warm cream, wordmark above the storefront,
+   Layout: a single quiet column on warm cream, storefront above the wordmark,
    blue gingham along the bottom like a table runner. */
 :root {
   /* Palette (brand/palette.png) */
@@ -45,13 +45,13 @@ img { max-width: 100%; height: auto; display: block; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(1rem, 2.5vw, 2rem);
+  gap: clamp(0.75rem, 2vw, 1.5rem);
   padding-block: clamp(2rem, 6vw, 4.5rem) clamp(2rem, 5vw, 3.5rem);
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
 }
 
-.wordmark { margin: 0; width: min(560px, 86%); }
+.wordmark { margin: 0; width: min(495px, 76%); }
 
 .storefront { width: min(460px, 80%); }
 
@@ -75,7 +75,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* Tagline under the wordmark */
 .tagline {
-  margin: calc(-1 * clamp(0.5rem, 2vw, 1.5rem)) 0 0.5rem;
+  margin: 0 0 0.75rem;
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 500;
