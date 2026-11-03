@@ -1,12 +1,13 @@
 // Store hours: [open, close] in 24-hour time, indexed Sunday (0) to Saturday (6).
 // Keep in sync with the table in index.html. Use null for a closed day.
-const HOURS = [[11, 17], [10, 18], [10, 18], [10, 18], [10, 20], [10, 20], [9, 18]];
+const HOURS = [[10, 18], [9, 18], [9, 18], [9, 18], [9, 18], [9, 18], [9, 18]];
 
 (function () {
   const now = new Date();
   const day = now.getDay();
-  const row = document.querySelector(`.hours-table tr[data-day="${day}"]`);
-  if (row) row.classList.add("today");
+  document.querySelectorAll(".hours-table tr[data-days]").forEach((tr) => {
+    if (tr.dataset.days.split(" ").includes(String(day))) tr.classList.add("today");
+  });
 
   const status = document.getElementById("open-status");
   const h = HOURS[day];
