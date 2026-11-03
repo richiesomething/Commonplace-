@@ -201,12 +201,18 @@ img { max-width: 100%; height: auto; display: block; }
   text-transform: uppercase;
   color: var(--tomato-red);
 }
-.workshop-date {
-  margin: 0 0 0.6rem;
+.workshop-name {
+  margin: 0.1rem 0 0;
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 1.6rem;
-  line-height: 1.15;
+  font-size: clamp(1.9rem, 4.5vw, 2.3rem);
+  line-height: 1.1;
+  text-wrap: balance;
+}
+.workshop-date {
+  margin: 0 0 0.6rem;
+  font-size: 1.05rem;
+  line-height: 1.5;
 }
 
 /* Sign-up dialog */

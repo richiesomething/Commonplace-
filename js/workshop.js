@@ -5,9 +5,10 @@
   const done = document.getElementById("signup-done");
   const error = document.getElementById("signup-error");
 
-  // Each sign-up button names its workshop date in data-signup.
+  // Each sign-up button names its date in data-signup and, optionally, the event in data-event.
   function open(e) {
-    const when = e.currentTarget.dataset.signup;
+    const { signup: when, event: name } = e.currentTarget.dataset;
+    document.getElementById("signup-title").textContent = name || "Workshop Sign-Up";
     if (when) {
       document.getElementById("signup-when").textContent = when;
       document.getElementById("signup-done-when").textContent = when;
