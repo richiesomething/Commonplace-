@@ -1,8 +1,9 @@
 /**
  * Commonplace Stationery: event sign-ups
  *
- * Lives inside the "Commonplace Event Sign-ups" Google Sheet
- * (Extensions > Apps Script). The website sends each sign-up here, and this
+ * Lives inside the "Commonplace Event Sign-ups" Google Sheet on the
+ * commonplace.stationery@gmail.com account (Extensions > Apps Script).
+ * Works with a blank sheet: the column headings are added automatically. The website sends each sign-up here, and this
  * script adds it as a new row. It also tells the website how many spots are left.
  *
  * To change how many spots an event has, edit CAPACITY below, then
@@ -15,9 +16,18 @@ const CAPACITY = {
 
 const SHEET_NAME = ''; // blank = first tab of the spreadsheet
 
+const HEADERS = ['Signed up at', 'Event', 'Event ID', 'Date', 'Name', 'Email', 'Seats'];
+
+// The sign-up tab. Adds the column headings if the sheet is still blank.
 function sheet_() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
-  return SHEET_NAME ? ss.getSheetByName(SHEET_NAME) : ss.getSheets()[0];
+  const sh = SHEET_NAME ? ss.getSheetByName(SHEET_NAME) : ss.getSheets()[0];
+  if (sh.getLastRow() === 0) {
+    sh.appendRow(HEADERS);
+    sh.setFrozenRows(1);
+    sh.getRange(1, 1, 1, HEADERS.length).setFontWeight('bold');
+  }
+  return sh;
 }
 
 // Seats already taken for each event ID, read from the sheet.
