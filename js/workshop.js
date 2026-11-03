@@ -51,7 +51,15 @@
     if (field) field.focus();
   }
 
-  document.querySelectorAll("[data-signup]").forEach((btn) => btn.addEventListener("click", open));
+  // Buttons start as "Sign Ups Will Be Open Soon". Once SIGNUP_URL is set they
+  // switch to their real label (data-open-label) and open the form.
+  document.querySelectorAll("[data-signup]").forEach((btn) => {
+    if (url) {
+      btn.textContent = btn.dataset.openLabel || "Sign Up";
+      btn.disabled = false;
+    }
+    btn.addEventListener("click", open);
+  });
   document.getElementById("signup-cancel").addEventListener("click", () => dialog.close());
   document.getElementById("signup-close").addEventListener("click", () => dialog.close());
   dialog.addEventListener("click", (e) => { if (e.target === dialog) dialog.close(); });

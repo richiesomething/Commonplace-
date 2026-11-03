@@ -343,7 +343,8 @@ a.button { display: inline-block; text-decoration: none; color: #fff; }
 .spots-note { margin: 0.2rem 0 0; font-size: 0.95rem; font-style: italic; color: var(--tomato-red); }
 .spots-note.is-full { color: var(--ink-navy); }
 .event-body .spots-note { margin: 0; }
-.button:disabled { opacity: 0.55; cursor: not-allowed; }
+.button:disabled { opacity: 0.75; cursor: default; }
+.button:disabled:active { transform: none; }
 .button:disabled:hover { background: var(--tomato-red); }
 
 /* Events */
@@ -490,4 +491,12 @@ a.button { display: inline-block; text-decoration: none; color: #fff; }
 /* Keep the four menu links on one line on phones */
 @media (max-width: 440px) {
   .site-nav { gap: 0.25rem 1.1rem; font-size: 0.78rem; letter-spacing: 0.1em; }
+}
+
+/* Keep event card buttons on one line on phones */
+@media (max-width: 440px) {
+  .event-actions .button { font-size: 0.9rem; padding-inline: 1.1rem; }
+}
+@media (max-width: 380px) {
+  .event-actions .button { font-size: 0.82rem; padding-inline: 0.9rem; }
 }
