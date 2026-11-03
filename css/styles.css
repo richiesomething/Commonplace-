@@ -418,3 +418,45 @@ a.button { display: inline-block; text-decoration: none; color: #fff; }
   box-shadow: 0 0 0 5px var(--bg);
   transform: translate(-50%, -50%) rotate(45deg);
 }
+
+/* Footer: Visit Us on an Ink Navy band, matching the menu */
+.site-footer {
+  background: var(--ink-navy);
+  color: var(--warm-cream);
+  padding-block: clamp(2rem, 5vw, 3rem);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.footer-inner {
+  max-width: 820px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+.site-footer h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1.1;
+}
+.footer-cols {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem 2rem;
+}
+.footer-item { min-width: 0; display: flex; flex-direction: column; gap: 0.35rem; }
+.footer-item p, .footer-item address { margin: 0; font-style: normal; overflow-wrap: anywhere; }
+.footer-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ochre);
+}
+.site-footer a { color: var(--warm-cream); text-decoration-color: var(--ochre); }
+/* Marks details the shop still needs to fill in */
+.footer-placeholder { font-style: italic !important; opacity: 0.7; }
