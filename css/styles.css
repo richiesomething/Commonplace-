@@ -1,0 +1,74 @@
+/* Commonplace Stationery
+   Layout: a single quiet column on warm cream, wordmark above the storefront,
+   blue gingham along the bottom like a table runner. */
+:root {
+  /* Palette (brand/palette.png) */
+  --french-blue: #6E8DB5;  /* hero color: shelves, logo mark, stamps */
+  --warm-cream:  #F4EEE1;  /* walls and backgrounds */
+  --natural-oak: #C49A6C;  /* counter, journaling table, crates */
+  --ink-navy:    #23324A;  /* text, logo type, price cards */
+  --tomato-red:  #C8452F;  /* small pops: "new in" tags, events */
+  --ochre:       #D9A441;  /* optional second pop, used sparingly */
+
+  /* Roles */
+  --bg: var(--warm-cream);
+  --fg: var(--ink-navy);
+  --accent: var(--french-blue);
+
+  /* Type */
+  --font-display: "Cormorant Garamond", "Iowan Old Style", Garamond, Georgia, serif;
+  --font-body: "Lora", Georgia, "Times New Roman", serif;
+
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body { min-height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+.home {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  padding-block: clamp(2rem, 6vw, 4.5rem) clamp(2rem, 5vw, 3.5rem);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+.wordmark { margin: 0; width: min(560px, 86%); }
+
+.storefront { width: min(880px, 100%); }
+
+/* Blue gingham band: two translucent stripe layers crossing */
+.gingham {
+  height: 28px;
+  background-color: #fff;
+  background-image:
+    linear-gradient(90deg, rgb(110 141 181 / .5) 50%, transparent 50%),
+    linear-gradient(rgb(110 141 181 / .5) 50%, transparent 50%);
+  background-size: 28px 28px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .storefront { animation: settle .9s ease-out both; }
+  @keyframes settle {
+    from { opacity: .4; transform: translateY(8px); }
+    to   { opacity: 1;  transform: none; }
+  }
+}
