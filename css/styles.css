@@ -45,7 +45,7 @@ img { max-width: 100%; height: auto; display: block; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(1.5rem, 4vw, 3rem);
+  gap: clamp(1rem, 2.5vw, 2rem);
   padding-block: clamp(2rem, 6vw, 4.5rem) clamp(2rem, 5vw, 3.5rem);
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
@@ -53,7 +53,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .wordmark { margin: 0; width: min(560px, 86%); }
 
-.storefront { width: min(880px, 100%); }
+.storefront { width: min(460px, 80%); }
 
 /* Blue gingham band: two translucent stripe layers crossing */
 .gingham {
@@ -75,7 +75,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* Tagline under the wordmark */
 .tagline {
-  margin: calc(-1 * clamp(0.75rem, 2.5vw, 2rem)) 0 0;
+  margin: calc(-1 * clamp(0.5rem, 2vw, 1.5rem)) 0 0.5rem;
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 500;
