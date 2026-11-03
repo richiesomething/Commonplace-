@@ -18,7 +18,7 @@
   /* Type */
   --font-display: "Cormorant Garamond", "Iowan Old Style", Garamond, Georgia, serif;
   --font-body: "Lora", Georgia, "Times New Roman", serif;
-  --font-hand: "La Belle Aurore", "Segoe Script", "Bradley Hand", cursive;
+  --font-tagline: "IM Fell English", "Iowan Old Style", Garamond, Georgia, serif;
 
   color-scheme: light;
 }
@@ -98,14 +98,14 @@ img { max-width: 100%; height: auto; display: block; }
 .intro .tagline { margin: 0; }
 .intro-text { margin: 0; max-width: 60ch; color: rgb(35 50 74 / 0.85); text-wrap: pretty; }
 
-/* Tagline, written out by hand like a note on a shop card */
+/* Tagline, set in old letterpress italic to sit with the wordmark */
 .tagline {
   margin: 0 0 0.75rem;
-  font-family: var(--font-hand);
+  font-family: var(--font-tagline);
+  font-style: italic;
   font-weight: 400;
-  font-size: clamp(1.4rem, 3vw, 1.75rem);
-  line-height: 1.6;
-  word-spacing: 0.05em;
+  font-size: clamp(1.3rem, 3vw, 1.65rem);
+  line-height: 1.4;
   color: var(--ink-navy);
   text-align: center;
   text-wrap: balance;
