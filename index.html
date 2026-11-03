@@ -20,6 +20,12 @@
     </h1>
     <p class="tagline">Friendly Neighborhood Stationery Shop</p>
 
+    <section class="workshop" aria-labelledby="workshop-title">
+      <p class="eyebrow" id="workshop-title">Next Workshop</p>
+      <p class="workshop-date"><time datetime="2027-01-14">Thursday, January 14</time></p>
+      <button class="button" type="button" id="workshop-signup">Sign Up for the Workshop</button>
+    </section>
+
     <section class="hours" aria-labelledby="hours-title">
       <h2 id="hours-title">Store Hours</h2>
       <p class="open-status" id="open-status" hidden></p>
@@ -32,6 +38,32 @@
     </section>
   </main>
   <div class="gingham" aria-hidden="true"></div>
+
+  <dialog class="signup" id="signup-dialog" aria-labelledby="signup-title">
+    <form class="signup-form" id="signup-form" novalidate>
+      <h2 id="signup-title">Workshop Sign-Up</h2>
+      <p class="signup-when">Thursday, January 14</p>
+      <label for="signup-name">Name</label>
+      <input id="signup-name" name="name" type="text" autocomplete="name" required>
+      <label for="signup-email">Email</label>
+      <input id="signup-email" name="email" type="email" autocomplete="email" required>
+      <label for="signup-seats">Seats</label>
+      <select id="signup-seats" name="seats">
+        <option>1</option><option>2</option><option>3</option><option>4</option>
+      </select>
+      <p class="signup-error" id="signup-error" role="alert" hidden></p>
+      <div class="signup-actions">
+        <button class="button button--quiet" type="button" id="signup-cancel">Cancel</button>
+        <button class="button" type="submit">Save My Seat</button>
+      </div>
+    </form>
+    <div class="signup-done" id="signup-done" hidden>
+      <h2>You're on the list</h2>
+      <p>We'll see you Thursday, January 14.</p>
+      <button class="button" type="button" id="signup-close">Done</button>
+    </div>
+  </dialog>
   <script src="js/hours.js"></script>
+  <script src="js/workshop.js"></script>
 </body>
 </html>

@@ -24,6 +24,8 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
+[hidden] { display: none !important; }
+
 html, body { min-height: 100%; }
 
 body {
@@ -137,3 +139,84 @@ img { max-width: 100%; height: auto; display: block; }
   font-weight: 600;
 }
 .hours-table tr.today th { font-weight: 600; }
+
+/* Buttons */
+.button {
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.7rem 1.5rem;
+  font: 500 1rem/1.2 var(--font-body);
+  color: #fff;
+  background: var(--tomato-red);
+  cursor: pointer;
+  transition: background-color .15s ease, transform .15s ease;
+}
+.button:hover { background: #B03A26; }
+.button:active { transform: translateY(1px); }
+.button:focus-visible { outline: 3px solid var(--french-blue); outline-offset: 3px; }
+.button--quiet {
+  color: var(--ink-navy);
+  background: transparent;
+  box-shadow: inset 0 0 0 1px rgb(35 50 74 / 0.35);
+}
+.button--quiet:hover { background: rgb(35 50 74 / 0.06); }
+
+/* Next workshop */
+.workshop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+.eyebrow {
+  margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tomato-red);
+}
+.workshop-date {
+  margin: 0 0 0.6rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 1.15;
+}
+
+/* Sign-up dialog */
+.signup {
+  width: min(400px, calc(100% - 32px));
+  border: 3px double var(--natural-oak);
+  padding: 1.75rem 1.5rem 1.5rem;
+  background: #FBF8F1;
+  color: var(--ink-navy);
+}
+.signup::backdrop { background: rgb(35 50 74 / 0.45); }
+.signup h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 1.1;
+}
+.signup-form { display: flex; flex-direction: column; gap: 0.4rem; }
+.signup-when { margin: 0 0 0.75rem; font-style: italic; }
+.signup label { font-size: 0.9rem; font-weight: 500; margin-top: 0.35rem; }
+.signup input,
+.signup select {
+  font: 1rem var(--font-body);
+  color: var(--ink-navy);
+  padding: 0.55rem 0.7rem;
+  border: 1px solid rgb(35 50 74 / 0.3);
+  border-radius: 6px;
+  background: #fff;
+}
+.signup input:focus-visible,
+.signup select:focus-visible { outline: 2px solid var(--french-blue); outline-offset: 1px; }
+.signup-error { margin: 0.25rem 0 0; color: #A8361F; font-size: 0.9rem; }
+.signup-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0.6rem; margin-top: 1rem; }
+.signup-done { display: flex; flex-direction: column; align-items: flex-start; gap: 0.6rem; }
+.signup-done p { margin: 0 0 0.5rem; }
