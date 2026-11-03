@@ -5,7 +5,13 @@
   const done = document.getElementById("signup-done");
   const error = document.getElementById("signup-error");
 
-  function open() {
+  // Each sign-up button names its workshop date in data-signup.
+  function open(e) {
+    const when = e.currentTarget.dataset.signup;
+    if (when) {
+      document.getElementById("signup-when").textContent = when;
+      document.getElementById("signup-done-when").textContent = when;
+    }
     form.reset();
     form.hidden = false;
     done.hidden = true;

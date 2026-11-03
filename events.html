@@ -40,10 +40,40 @@
           </time>
           <div class="event-body">
             <p class="eyebrow">Workshop</p>
-            <h3>January Workshop</h3>
-            <p class="event-meta">Thursday, January 14 · Time and details coming soon</p>
+            <h3>Thursday, January 14</h3>
+            <p class="event-meta">Time and details coming soon</p>
             <div class="event-actions">
-              <button class="button" type="button" data-signup>Sign Up</button>
+              <button class="button" type="button" data-signup="Thursday, January 14">Sign Up</button>
+            </div>
+          </div>
+        </li>
+        <li class="event">
+          <time class="event-date" datetime="2027-01-17">
+            <span class="event-month">Jan</span>
+            <span class="event-day">17</span>
+            <span class="event-weekday">Sun</span>
+          </time>
+          <div class="event-body">
+            <p class="eyebrow">Workshop</p>
+            <h3>Sunday, January 17</h3>
+            <p class="event-meta">Time and details coming soon</p>
+            <div class="event-actions">
+              <button class="button" type="button" data-signup="Sunday, January 17">Sign Up</button>
+            </div>
+          </div>
+        </li>
+        <li class="event">
+          <time class="event-date" datetime="2027-01-21">
+            <span class="event-month">Jan</span>
+            <span class="event-day">21</span>
+            <span class="event-weekday">Thu</span>
+          </time>
+          <div class="event-body">
+            <p class="eyebrow">Workshop</p>
+            <h3>Thursday, January 21</h3>
+            <p class="event-meta">Time and details coming soon</p>
+            <div class="event-actions">
+              <button class="button" type="button" data-signup="Thursday, January 21">Sign Up</button>
             </div>
           </div>
         </li>
@@ -76,7 +106,7 @@
   <dialog class="signup" id="signup-dialog" aria-labelledby="signup-title">
     <form class="signup-form" id="signup-form" novalidate>
       <h2 id="signup-title">Workshop Sign-Up</h2>
-      <p class="signup-when">Thursday, January 14</p>
+      <p class="signup-when" id="signup-when">Thursday, January 14</p>
       <label for="signup-name">Name</label>
       <input id="signup-name" name="name" type="text" autocomplete="name" required>
       <label for="signup-email">Email</label>
@@ -93,7 +123,7 @@
     </form>
     <div class="signup-done" id="signup-done" hidden>
       <h2>You're on the list</h2>
-      <p>We'll see you Thursday, January 14.</p>
+      <p>We'll see you <span id="signup-done-when">Thursday, January 14</span>.</p>
       <button class="button" type="button" id="signup-close">Done</button>
     </div>
   </dialog>
