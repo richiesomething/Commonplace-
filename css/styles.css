@@ -95,6 +95,7 @@ img { max-width: 100%; height: auto; display: block; }
   text-align: center;
 }
 .intro .tagline { margin: 0; }
+.coming-soon { width: min(220px, 60%); margin-top: 0.5rem; }
 .intro-text { margin: 0; max-width: 60ch; color: rgb(35 50 74 / 0.85); text-wrap: pretty; }
 
 /* Tagline, set in old letterpress italic to sit with the wordmark */
@@ -461,3 +462,8 @@ a.button { display: inline-block; text-decoration: none; color: #fff; }
 .footer-link { font-size: 0.9rem; margin-top: 0.25rem; }
 /* Marks details the shop still needs to fill in */
 .footer-placeholder { font-style: italic !important; opacity: 0.7; }
+
+/* Keep the four menu links on one line on phones */
+@media (max-width: 440px) {
+  .site-nav { gap: 0.25rem 1.1rem; font-size: 0.78rem; letter-spacing: 0.1em; }
+}
