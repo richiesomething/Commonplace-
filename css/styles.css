@@ -458,5 +458,6 @@ a.button { display: inline-block; text-decoration: none; color: #fff; }
   color: var(--ochre);
 }
 .site-footer a { color: var(--warm-cream); text-decoration-color: var(--ochre); }
+.footer-link { font-size: 0.9rem; margin-top: 0.25rem; }
 /* Marks details the shop still needs to fill in */
 .footer-placeholder { font-style: italic !important; opacity: 0.7; }
