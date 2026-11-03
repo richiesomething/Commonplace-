@@ -18,6 +18,7 @@
   /* Type */
   --font-display: "Cormorant Garamond", "Iowan Old Style", Garamond, Georgia, serif;
   --font-body: "Lora", Georgia, "Times New Roman", serif;
+  --font-hand: "Homemade Apple", "Segoe Script", "Bradley Hand", cursive;
 
   color-scheme: light;
 }
@@ -97,13 +98,14 @@ img { max-width: 100%; height: auto; display: block; }
 .intro .tagline { margin: 0; }
 .intro-text { margin: 0; max-width: 60ch; color: rgb(35 50 74 / 0.85); text-wrap: pretty; }
 
-/* Tagline */
+/* Tagline, written out by hand like a note on a shop card */
 .tagline {
   margin: 0 0 0.75rem;
-  font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 500;
-  font-size: clamp(1.25rem, 3vw, 1.6rem);
+  font-family: var(--font-hand);
+  font-weight: 400;
+  font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+  line-height: 1.9;
+  word-spacing: 0.18em;
   color: var(--ink-navy);
   text-align: center;
   text-wrap: balance;
