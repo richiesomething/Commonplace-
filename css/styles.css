@@ -66,6 +66,17 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .storefront { width: min(240px, 56%); }
 .wordmark { display: block; margin: 0; width: min(260px, 60%); }
+/* Location line under the wordmark, in the wordmark's olive ink */
+.locale {
+  margin: -0.2rem 0 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #3F3C19;
+}
+.locale span { margin: 0 0.35em; color: var(--natural-oak); }
 
 /* Blue gingham band: two translucent stripe layers crossing */
 .gingham {
@@ -539,3 +550,6 @@ a.button { display: inline-block; text-decoration: none; color: #fff; }
 .brand-group--soon { border: 2px dashed var(--french-blue); background: transparent; }
 .brand-group--soon h2 { color: #4F6E99; }
 .brand-group--soon .brand-list li { color: rgb(35 50 74 / 0.8); }
+@media (max-width: 440px) {
+  .locale { font-size: 0.7rem; letter-spacing: 0.16em; }
+}
