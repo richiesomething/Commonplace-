@@ -15,7 +15,7 @@ python3 -m http.server 8000
 - `brands.html`: the brands the shop carries, grouped by category, plus an Adding Soon list
 - `events.html`: upcoming workshops and events, each with a sign-up button
 - `about.html`: About Us, with Hailey's story
-- `js/hours.js`: open/closed status from the store hours
+- `js/hours.js`: open/closed status from the store hours (not loaded right now; hours are hidden until opening)
 - `js/workshop.js`, `js/config.js`: event sign-up form; sign-ups go to the "Commonplace Event Sign-ups" Google Sheet on commonplace.stationery@gmail.com through the web app URL set in `js/config.js`
 - `google-apps-script/Code.gs`: the script that lives in that Google Sheet (Extensions > Apps Script); event spot limits are set at the top
 - `css/styles.css`: colors and fonts live as CSS variables at the top
