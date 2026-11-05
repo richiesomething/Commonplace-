@@ -21,8 +21,13 @@
     const d = e.currentTarget.dataset;
     current = { id: d.eventId || "", name: d.event || "Workshop", date: d.signup || "" };
     document.getElementById("signup-title").textContent = d.event || "Workshop Sign-Up";
-    document.getElementById("signup-when").textContent = current.date;
-    document.getElementById("signup-done-when").textContent = current.date;
+    // Show the date and time only once an event has them (data-signup).
+    const whenEl = document.getElementById("signup-when");
+    whenEl.textContent = current.date;
+    whenEl.hidden = !current.date;
+    document.getElementById("signup-done-msg").textContent = current.date
+      ? `We'll see you on ${current.date}.`
+      : "We'll email you the date and time once they're set.";
     form.reset();
     limitSeats(spotsLeft[current.id]);
     form.hidden = false;
