@@ -63,6 +63,12 @@
       btn.textContent = btn.dataset.openLabel || "Sign Up";
       btn.disabled = false;
     }
+  });
+
+  // "Limited spots available!" notes stay hidden until sign-ups open.
+  if (url) document.querySelectorAll("[data-spots-for]").forEach((el) => { el.hidden = false; });
+
+  document.querySelectorAll("[data-signup]").forEach((btn) => {
     btn.addEventListener("click", open);
   });
   document.getElementById("signup-cancel").addEventListener("click", () => dialog.close());
