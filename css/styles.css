@@ -76,7 +76,7 @@ img { max-width: 100%; height: auto; display: block; }
   text-transform: uppercase;
   color: #3F3C19;
 }
-.locale span { margin: 0 0.35em; color: var(--natural-oak); }
+.locale span { margin: 0 0.3em; font-size: 1.25em; line-height: 0; vertical-align: -0.05em; }
 
 /* Blue gingham band: two translucent stripe layers crossing */
 .gingham {
