@@ -68,8 +68,9 @@ img { max-width: 100%; height: auto; display: block; }
 .wordmark { display: block; margin: 0; width: min(260px, 60%); }
 /* Location line under the wordmark, in the wordmark's olive ink */
 .locale {
-  margin: -0.2rem 0 0;
+  margin: 0.3rem 0 0;
   font-family: var(--font-display);
+  font-style: italic;
   font-weight: 600;
   font-size: 0.78rem;
   letter-spacing: 0.18em;
