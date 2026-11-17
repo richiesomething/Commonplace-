@@ -1,0 +1,39 @@
+# Publishes the preview/shop branch, with the shop's current Square items,
+# to GitHub Pages: https://richiesomething.github.io/Commonplace-/
+# commonplacestationery.com (Cloudflare, master branch) is not affected.
+name: Preview site
+on:
+  push:
+    branches: [preview/shop]
+  workflow_dispatch: # "Run workflow" button on GitHub to refresh stock right away
+  schedule:
+    - cron: "*/15 * * * *" # every 15 minutes (only runs once this file is on the default branch)
+concurrency:
+  group: preview-site
+  cancel-in-progress: true
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: preview/shop
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Build the site with current Square stock
+        env:
+          SQUARE_ACCESS_TOKEN: ${{ secrets.SQUARE_ACCESS_TOKEN }}
+        run: node scripts/build-preview.mjs
+      - name: Publish to GitHub Pages (gh-pages branch)
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: gh-pages
+          force_orphan: true
+          user_name: github-actions[bot]
+          user_email: 41898282+github-actions[bot]@users.noreply.github.com
+          commit_message: "Preview site with current Square stock"
