@@ -40,9 +40,19 @@
     <a href="brands.html">Brands</a>
     <a href="about.html">About Us</a>
   </nav>
+  <nav class="sub-nav" id="shop-subnav" aria-label="Shop categories">
+    <a href="shop.html" data-cat="">All</a>
+    <a href="shop.html?cat=notebooks" data-cat="notebooks">Notebooks &amp; Journals</a>
+    <a href="shop.html?cat=stickers" data-cat="stickers">Stickers &amp; Washi</a>
+    <a href="shop.html?cat=paper" data-cat="paper">Paper &amp; Scrapbooking</a>
+    <a href="shop.html?cat=cards" data-cat="cards">Cards</a>
+    <a href="shop.html?cat=pens" data-cat="pens">Pens, Markers &amp; Ink</a>
+    <a href="shop.html?cat=tools" data-cat="tools">Stamps, Tools &amp; Bags</a>
+    <a href="shop.html?cat=faith" data-cat="faith">Faith</a>
+  </nav>
   <main class="page page--wide">
     <header class="page-header">
-      <h1>Shop</h1>
+      <h1 id="shop-title">Shop</h1>
       <p class="tagline">What's on our shelves right now</p>
     </header>
 
@@ -54,7 +64,6 @@
           <span class="visually-hidden">Search items</span>
           <input type="search" id="shop-search" placeholder="Search items" autocomplete="off">
         </label>
-        <div class="shop-filters" id="shop-filters" role="group" aria-label="Filter by category"></div>
       </div>
       <p class="shop-status" id="shop-status" role="status">Loading what's on the shelves…</p>
       <div class="shop-grid" id="shop-grid"></div>

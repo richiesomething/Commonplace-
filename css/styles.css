@@ -571,7 +571,6 @@ a.button { display: inline-block; text-decoration: none; color: #fff; }
   background: #FBF8F1;
 }
 .shop-search input:focus-visible { outline: 2px solid var(--french-blue); outline-offset: 2px; }
-.shop-filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
 .shop-chip {
   font: 500 0.85rem/1 var(--font-body);
   letter-spacing: 0.04em;
@@ -619,4 +618,27 @@ a.button { display: inline-block; text-decoration: none; color: #fff; }
 /* Five menu links on phones */
 @media (max-width: 440px) {
   .site-nav { gap: 0.25rem 0.85rem; font-size: 0.72rem; letter-spacing: 0.08em; }
+}
+
+/* Shop submenu: a light band under the main menu */
+.sub-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.6rem;
+  padding-block: 0.6rem;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  background: #E9E1CF;
+  border-bottom: 1px solid rgb(196 154 108 / 0.6);
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+}
+.sub-nav a { color: var(--ink-navy); text-decoration: none; padding-block: 0.25rem; border-bottom: 2px solid transparent; white-space: nowrap; }
+.sub-nav a:hover { border-bottom-color: var(--natural-oak); }
+.sub-nav a[aria-current="page"] { border-bottom-color: var(--tomato-red); font-weight: 600; }
+/* Phones: one scrollable row instead of many wrapped lines */
+@media (max-width: 700px) {
+  .sub-nav { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; gap: 1.2rem; scrollbar-width: none; }
+  .sub-nav::-webkit-scrollbar { display: none; }
 }

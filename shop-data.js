@@ -56,6 +56,38 @@ async function stockCounts(token, variationIds) {
   return counts;
 }
 
+// ---------- Shop categories ----------
+// The Shop submenu. An item goes in every category whose words appear in its
+// name. If the item has a category in Square with one of these names, that
+// is used instead. Edit the word lists to change how items are sorted.
+export const SHOP_CATEGORIES = [
+  { slug: "notebooks", name: "Notebooks & Journals",
+    words: ["notebook", "notebooks", "journal", "journals", "planner", "planners", "workbook", "diary", "sketchbook", "voyager"] },
+  { slug: "stickers", name: "Stickers & Washi",
+    words: ["sticker", "stickers", "washi", "tape", "ephemera", "flakes"] },
+  { slug: "paper", name: "Paper & Scrapbooking",
+    words: ["paper", "papers", "pad", "booklet", "scrapbook", "scrapbooking", "cardstock", "notepad", "envelope", "envelopes"] },
+  { slug: "cards", name: "Cards",
+    words: ["card", "cards", "postcard", "postcards"] },
+  { slug: "pens", name: "Pens, Markers & Ink",
+    words: ["pen", "pens", "marker", "markers", "highlighter", "highlighters", "mildliner", "ink", "inks", "gel", "fineliner", "pencil", "pencils", "brush"] },
+  { slug: "tools", name: "Stamps, Tools & Bags",
+    words: ["stamp", "stamps", "scissors", "trimmer", "punch", "clip", "clips", "ruler", "frame", "frames", "embroidery", "bag", "bags", "pouch", "pouches", "keeper", "case", "tabs", "glue", "stencil", "bookmark", "bookmarks", "calligraphy"] },
+  { slug: "faith", name: "Faith",
+    words: ["bible", "prayer", "psalm", "psalms", "scripture", "christian", "faith", "jesus", "lord", "god", "verse", "sermon", "devotional"],
+    // Bible references like "Psalm 34:8" or "1 Peter 1:6"
+    pattern: /\b\d?\s?[a-z]+\s\d{1,3}:\d{1,3}\b/i },
+];
+
+function categorize(name, squareCategory) {
+  const fromSquare = SHOP_CATEGORIES.find((c) => c.name.toLowerCase() === (squareCategory || "").toLowerCase());
+  if (fromSquare) return [fromSquare.slug];
+  const words = new Set(name.toLowerCase().replace(/[^a-z0-9]+/g, " ").split(" "));
+  return SHOP_CATEGORIES
+    .filter((c) => c.words.some((w) => words.has(w)) || (c.pattern && c.pattern.test(name)))
+    .map((c) => c.slug);
+}
+
 function formatMoney(cents) {
   return "$" + (cents / 100).toFixed(2);
 }
@@ -117,6 +149,7 @@ export async function buildShop(token) {
       name: d.name || "",
       description: (d.description_plaintext || "").slice(0, 400),
       category,
+      categories: categorize(d.name || "", category),
       image: imageId ? images[imageId] || "" : "",
       price: min == null ? "" : min === max ? formatMoney(min) : `${formatMoney(min)} – ${formatMoney(max)}`,
       stock,
@@ -124,5 +157,6 @@ export async function buildShop(token) {
   });
 
   out.sort((a, b) => a.category.localeCompare(b.category) || a.name.localeCompare(b.name));
-  return { ok: true, updated: new Date().toISOString(), items: out };
+  const categoryList = SHOP_CATEGORIES.map(({ slug, name }) => ({ slug, name }));
+  return { ok: true, updated: new Date().toISOString(), categories: categoryList, items: out };
 }
