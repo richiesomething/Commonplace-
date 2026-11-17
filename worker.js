@@ -43,33 +43,6 @@ export default {
       }
     }
 
-    // TEMPORARY: helps tell which kind of key was saved, without revealing it.
-    if (url.pathname === "/api/square/key-check") {
-      const raw = env.SQUARE_ACCESS_TOKEN || "";
-      const key = raw.trim();
-      const out = {
-        saved: Boolean(raw),
-        hasExtraSpaces: raw !== key,
-        length: key.length,
-        startsWithEAAA: key.startsWith("EAAA"),
-        looksLikeAppId: key.startsWith("sq0idp-") || key.startsWith("sandbox-sq0idb-"),
-        looksLikeAppSecret: key.startsWith("sq0csp-") || key.startsWith("sandbox-sq0csb-"),
-      };
-      try {
-        const sandbox = await fetch("https://connect.squareupsandbox.com/v2/locations", {
-          headers: { Authorization: `Bearer ${key}`, "Square-Version": SQUARE_VERSION },
-        });
-        out.worksWithSandbox = sandbox.ok;
-        const prod = await fetch(SQUARE_API + "/locations", {
-          headers: { Authorization: `Bearer ${key}`, "Square-Version": SQUARE_VERSION },
-        });
-        out.worksWithProduction = prod.ok;
-      } catch (err) {
-        out.error = "network";
-      }
-      return json(out);
-    }
-
     if (url.pathname.startsWith("/api/")) return json({ error: "not_found" }, 404);
 
     // Everything else is a normal page or file.
