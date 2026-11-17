@@ -1,0 +1,32 @@
+# Checks that the SQUARE_ACCESS_TOKEN repository secret works.
+# Prints only whether Square accepted it, never the token or shop data.
+name: Square key check
+on:
+  push:
+    branches: [preview/shop]
+    paths: [.github/workflows/square-check.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ask Square if the key works
+        env:
+          SQUARE_ACCESS_TOKEN: ${{ secrets.SQUARE_ACCESS_TOKEN }}
+        run: |
+          if [ -z "$SQUARE_ACCESS_TOKEN" ]; then
+            echo "::error::The SQUARE_ACCESS_TOKEN secret is missing or empty."
+            exit 1
+          fi
+          code=$(curl -s -o /dev/null -w '%{http_code}' \
+            -H "Authorization: Bearer $SQUARE_ACCESS_TOKEN" \
+            -H "Square-Version: 2025-01-23" \
+            https://connect.squareup.com/v2/locations)
+          if [ "$code" = "200" ]; then
+            echo "Square accepted the key."
+          else
+            echo "::error::Square rejected the key (HTTP $code). Check that it is the Production access token."
+            exit 1
+          fi
