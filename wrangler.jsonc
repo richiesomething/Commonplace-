@@ -1,0 +1,12 @@
+// Cloudflare Worker settings for commonplacestationery.com.
+// The site's pages and images are served as static assets; worker.js only
+// answers /api/* requests (used to read the shop's Square catalog).
+{
+  "name": "commonplace",
+  "main": "worker.js",
+  "compatibility_date": "2025-06-01",
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS"
+  }
+}

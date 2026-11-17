@@ -1,0 +1,8 @@
+# Files that are part of the repo but should not be served on the website
+.git
+.assetsignore
+wrangler.jsonc
+worker.js
+README.md
+google-apps-script
+node_modules

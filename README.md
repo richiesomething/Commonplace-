@@ -22,6 +22,15 @@ python3 -m http.server 8000
 - `assets/img/wordmark.webp`, `assets/img/storefront.webp`: brand artwork
 - `brand/palette.png`: the proposed color palette
 
+## Hosting
+
+The site deploys to Cloudflare (Worker named `commonplace`) on every push to `master`.
+
+- `wrangler.jsonc`: Worker settings. Pages and images are served as static assets.
+- `worker.js`: handles `/api/*` only, for reading the shop's Square catalog.
+- `.assetsignore`: repo files that are not served on the website.
+- Secret `SQUARE_ACCESS_TOKEN` is set in Cloudflare (Workers & Pages > commonplace > Settings > Variables and Secrets), never in this repo. Check it with `/api/square/status`.
+
 ## Palette
 
 | Name | Hex | Use |
